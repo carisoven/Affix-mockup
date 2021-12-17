@@ -12,3 +12,5 @@
 - [ ] Vote Page
 - [ ] Report Page
 - [ ] Chat Room (Single Page)
+- [ ] Profile User Page
+- [ ] Admin Page
