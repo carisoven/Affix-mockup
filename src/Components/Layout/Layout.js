@@ -13,18 +13,18 @@ const user = {
 
 //Menu Link
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-  { name: "Reports", href: "#", current: false },
+  { name: "Home", to: "/", current: true },
+  { name: "Problem", to: "/problem", current: false },
+  { name: "Review", to: "/reviews", current: false },
+//   { name: "Calendar", to: "#", current: false },
+  { name: "Chat", to: "/chats", current: false },
 ];
 
 //Menu user
 const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
+  { name: "Your Profile", href: "/profile" },
+//   { name: "Settings", href: "#" },
+  { name: "Sign out" },
 ];
 
 
@@ -218,7 +218,7 @@ export default function Layout(props) {
             {/* Replace with your content */}
 
             <div className="px-4 py-6 sm:px-0">
-              <div className="border-4 border-dashed border-gray-200 rounded-lg h-96">
+              <div className="border-4 border-gray-200 rounded-lg h-[700px]"  >
                 {props.children}
               </div>
             </div>

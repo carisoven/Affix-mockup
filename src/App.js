@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Layout from "./Components/Layout/Layout";
 
 
@@ -5,8 +6,12 @@ function App() {
   return (
     <div className="App">
       <Layout>
-        <div className="bg-red-200 mx-auto p-4 h-full">
+        {/* Router Page and */}
+        <div className="bg-red-200 rounded mx-auto p-4 h-full">
           <p className="text-black">Hello</p>
+          <Link to="/admin" >
+            A
+          </Link>
         </div>
       </Layout>
     </div>
