@@ -1,11 +1,14 @@
-/* eslint-disable no-lone-blocks */
-import logo from './logo.svg';
-import './App.css';
+import Layout from "./Components/Layout/Layout";
+
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-xl text-blue-900">Hello world!</h1>
+      <Layout>
+        <div className="bg-red-200 mx-auto p-4 h-full">
+          <p className="text-black">Hello</p>
+        </div>
+      </Layout>
     </div>
   );
 }

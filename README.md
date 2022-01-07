@@ -2,7 +2,7 @@
 
 ## List Create Page
 
-- [ ] Affix Init Page
+- [x] Affix Init Page
 - [ ] Login Page
 - [ ] Signup Page
 - [ ] Feed (Home) Page (Recommend Page)
