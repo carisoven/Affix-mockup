@@ -2,6 +2,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 
 //user data import
 const user = {
@@ -13,20 +14,12 @@ const user = {
 
 //Menu Link
 const navigation = [
-  { name: "Home", to: "/", current: true },
-  { name: "Problem", to: "/problem", current: false },
-  { name: "Review", to: "/reviews", current: false },
-//   { name: "Calendar", to: "#", current: false },
-  { name: "Chat", to: "/chats", current: false },
+  { name: "Home", to: "/", current: false },
+  { name: "Problem", to: "problem", current: false },
+  { name: "Review", to: "reviews", current: false },
+  //   { name: "Calendar", to: "#", current: false },
+  { name: "Chat", to: "chats", current: false },
 ];
-
-//Menu user
-const userNavigation = [
-  { name: "Your Profile", href: "/profile" },
-//   { name: "Settings", href: "#" },
-  { name: "Sign out" },
-];
-
 
 function Filt(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -49,6 +42,7 @@ export default function Layout(props) {
             <>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
+                  {/* Menu Left */}
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <img
@@ -60,9 +54,8 @@ export default function Layout(props) {
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
+                          <Link
+                            to={item.to}
                             className={Filt(
                               item.current
                                 ? "bg-gray-900 text-white"
@@ -72,7 +65,7 @@ export default function Layout(props) {
                             aria-current={item.current ? "page" : undefined}
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -109,21 +102,37 @@ export default function Layout(props) {
                           leaveTo="transform opacity-0 scale-95"
                         >
                           <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            {userNavigation.map((item) => (
+                            {/* {userNavigation.map((item) => (
                               <Menu.Item key={item.name}>
                                 {({ active }) => (
-                                  <a
-                                    href={item.href}
+                                  <Link
+                                    to={item.to}
                                     className={Filt(
                                       active ? "bg-gray-100" : "",
                                       "block px-4 py-2 text-sm text-gray-700"
                                     )}
                                   >
                                     {item.name}
-                                  </a>
+                                  </Link>
                                 )}
                               </Menu.Item>
-                            ))}
+                              // <Menu.Item>{item.name}</Menu.Item>
+                            ))} */}
+
+                            <Menu.Item>
+                              <Link
+                                to="profile"
+                                className="block px-4 py-2 text-sm text-gray-700"
+                              >
+                                Your Profile
+                              </Link>
+                            </Menu.Item>
+                            <Menu.Item>
+                              <button className="block px-4 py-2 text-sm text-gray-700" >
+                                Sign Out
+                              </button>
+                            </Menu.Item>
+                            {/* <Menu.Item>Sign out</Menu.Item> */}
                           </Menu.Items>
                         </Transition>
                       </Menu>
@@ -148,7 +157,7 @@ export default function Layout(props) {
 
               <Disclosure.Panel className="md:hidden">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                  {navigation.map((item) => (
+                  {/* {navigation.map((item) => (
                     <Disclosure.Button
                       key={item.name}
                       as="a"
@@ -163,7 +172,19 @@ export default function Layout(props) {
                     >
                       {item.name}
                     </Disclosure.Button>
-                  ))}
+                  ))} */}
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <Link to="/">Home</Link>
+                  </Disclosure.Button>
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <Link to="/problem">Problem</Link>
+                  </Disclosure.Button>
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <Link to="/review">Review</Link>
+                  </Disclosure.Button>
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <Link to="/chat">Chat</Link>
+                  </Disclosure.Button>
                 </div>
                 <div className="pt-4 pb-3 border-t border-gray-700">
                   <div className="flex items-center px-5">
@@ -191,16 +212,22 @@ export default function Layout(props) {
                     </button>
                   </div>
                   <div className="mt-3 px-2 space-y-1">
-                    {userNavigation.map((item) => (
+                    {/* {userNavigation.map((item) => (
                       <Disclosure.Button
                         key={item.name}
                         as="a"
-                        href={item.href}
+                        href={item.to}
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                       >
                         {item.name}
                       </Disclosure.Button>
-                    ))}
+                    ))} */}
+                    <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      <Link to="/profile">Your Profile</Link>
+                    </Disclosure.Button>
+                    <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      Sign Out
+                    </Disclosure.Button>
                   </div>
                 </div>
               </Disclosure.Panel>
@@ -218,7 +245,7 @@ export default function Layout(props) {
             {/* Replace with your content */}
 
             <div className="px-4 py-6 sm:px-0">
-              <div className="border-4 border-gray-200 rounded-lg h-[700px]"  >
+              <div className="border-4 border-gray-200 rounded-lg h-[700px]">
                 {props.children}
               </div>
             </div>

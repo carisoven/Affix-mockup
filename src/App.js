@@ -9,9 +9,7 @@ function App() {
         {/* Router Page and */}
         <div className="bg-red-200 rounded mx-auto p-4 h-full">
           <p className="text-black">Hello</p>
-          <Link to="/admin" >
-            A
-          </Link>
+
         </div>
       </Layout>
     </div>
