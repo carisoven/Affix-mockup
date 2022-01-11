@@ -1,35 +1,30 @@
-/* eslint-disable no-lone-blocks */
-import logo from './logo.svg';
-import './App.css';
+import Login from "./Components/Auth/Login";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import Mainpost from "./Components/Post/Mainpost";
+import Layout from "./Components/Layout/Layout";
+import NotFound from "./Components/Layout/NotFound";
+import Review from "./Components/Review/Review";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-xl text-red-400">Hello world!</h1>
+      <Routes>
+        {/* Initial Page*/}
+        <Route index path="/" element={<Login />} />
+        {/* Sub Menu After Login*/}
+        <Route path="/" element={<Layout />}>
+          <Route path="home" element={<Home />} />
+          <Route path="reviews" element={<Review />} />
+          <Route path="problem" element={<Mainpost />} />
+          {/* ยังไม่ต้องแอด Chat Page */}
+        </Route>
+        {/* Not Found Page */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
 
-//Discription Route page (เปลี่ยนหน้าหรือComponents)
-//--- ไม่มี Page หรือ Componets อื่นที่ปรากฎบน ตัวอย่าง
-{
-  /*
-import * as React from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import "./App.css";
-
-function App() {
-  return (
-    <div className="App">
-      <h1>Welcome to React Router!</h1>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-      </Routes>
-    </div>
-  );
-}
-*/
-}
