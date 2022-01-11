@@ -2,7 +2,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 //user data import
 const user = {
@@ -14,7 +14,7 @@ const user = {
 
 //Menu Link
 const navigation = [
-  { name: "Home", to: "/", current: false },
+  { name: "Home", to: "home", current: false },
   { name: "Problem", to: "problem", current: false },
   { name: "Review", to: "reviews", current: false },
   //   { name: "Calendar", to: "#", current: false },
@@ -128,7 +128,7 @@ export default function Layout(props) {
                               </Link>
                             </Menu.Item>
                             <Menu.Item>
-                              <button className="block px-4 py-2 text-sm text-gray-700" >
+                              <button className="block px-4 py-2 text-sm text-gray-700">
                                 Sign Out
                               </button>
                             </Menu.Item>
@@ -174,16 +174,16 @@ export default function Layout(props) {
                     </Disclosure.Button>
                   ))} */}
                   <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                    <Link to="/">Home</Link>
+                    <Link to="home">Home</Link>
                   </Disclosure.Button>
                   <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                    <Link to="/problem">Problem</Link>
+                    <Link to="problem">Problem</Link>
                   </Disclosure.Button>
                   <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                    <Link to="/review">Review</Link>
+                    <Link to="review">Review</Link>
                   </Disclosure.Button>
                   <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                    <Link to="/chat">Chat</Link>
+                    <Link to="chat">Chat</Link>
                   </Disclosure.Button>
                 </div>
                 <div className="pt-4 pb-3 border-t border-gray-700">
@@ -223,7 +223,7 @@ export default function Layout(props) {
                       </Disclosure.Button>
                     ))} */}
                     <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                      <Link to="/profile">Your Profile</Link>
+                      <Link to="profile">Your Profile</Link>
                     </Disclosure.Button>
                     <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                       Sign Out
@@ -246,7 +246,11 @@ export default function Layout(props) {
 
             <div className="px-4 py-6 sm:px-0">
               <div className="border-4 border-gray-200 rounded-lg h-[700px]">
-                {props.children}
+                {/* Router Page and */}
+                {/* <div className="bg-red-200 rounded mx-auto p-4 h-full">
+                  <p className="text-black">Hello</p>
+                </div> */}
+                <Outlet />
               </div>
             </div>
             {/* /End replace */}

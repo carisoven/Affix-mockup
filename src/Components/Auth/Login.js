@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
     return (
@@ -120,6 +121,7 @@ const Login = () => {
               <label for="remember" class="text-sm font-semibold text-gray-500">Remember me</label>
             </div> */}
               <div className="py-4">
+                <Link to="/home">
                 <button
                   type="submit"
                 //   onClick={(e) => onSubmit(e)}
@@ -127,6 +129,7 @@ const Login = () => {
                 >
                   Log in
                 </button>
+                </Link>
               </div>
               <div>
                 <button class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-red-400 rounded-md shadow hover:bg-red-400 focus:outline-none focus:ring-red-200 focus:ring-4">
