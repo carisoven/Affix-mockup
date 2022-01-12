@@ -37,7 +37,8 @@ export default function Layout(props) {
         ```
       */}
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-900">
+        {/* bg-gray-900 */}
+        <Disclosure as="nav" className="bg-red-400">
           {({ open }) => (
             <>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,11 +46,12 @@ export default function Layout(props) {
                   {/* Menu Left */}
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <img
+                      {/* Logo Replace */}
+                      {/* <img
                         className="h-8 w-8"
                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                         alt="Workflow"
-                      />
+                      /> */}
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
@@ -59,7 +61,7 @@ export default function Layout(props) {
                             className={Filt(
                               item.current
                                 ? "bg-gray-900 text-white"
-                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                : "text-white hover:bg-red-300 hover:text-white",
                               "px-3 py-2 rounded-md text-sm font-medium"
                             )}
                             aria-current={item.current ? "page" : undefined}
@@ -74,7 +76,7 @@ export default function Layout(props) {
                     <div className="ml-4 flex items-center md:ml-6">
                       <button
                         type="button"
-                        className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                        className="bg-red-300 p-1 rounded-full text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-300 focus:ring-white"
                       >
                         <span className="sr-only">View notifications</span>
                         <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -83,7 +85,7 @@ export default function Layout(props) {
                       {/* Profile dropdown */}
                       <Menu as="div" className="ml-3 relative">
                         <div>
-                          <Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                          <Menu.Button className="max-w-xs bg-red-400 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-300 focus:ring-white">
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
@@ -128,9 +130,11 @@ export default function Layout(props) {
                               </Link>
                             </Menu.Item>
                             <Menu.Item>
-                              <button className="block px-4 py-2 text-sm text-gray-700">
-                                Sign Out
-                              </button>
+                              <Link to="/">
+                                <button className="block px-4 py-2 text-sm text-gray-700">
+                                  Sign Out
+                                </button>
+                              </Link>
                             </Menu.Item>
                             {/* <Menu.Item>Sign out</Menu.Item> */}
                           </Menu.Items>
@@ -140,7 +144,7 @@ export default function Layout(props) {
                   </div>
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
-                    <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <Disclosure.Button className="bg-red-400 inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-300 focus:ring-white">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -173,20 +177,20 @@ export default function Layout(props) {
                       {item.name}
                     </Disclosure.Button>
                   ))} */}
-                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-red-300 hover:text-white">
                     <Link to="home">Home</Link>
                   </Disclosure.Button>
-                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-red-300 hover:text-white">
                     <Link to="problem">Problem</Link>
                   </Disclosure.Button>
-                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-red-300 hover:text-white">
                     <Link to="review">Review</Link>
                   </Disclosure.Button>
-                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-red-300 hover:text-white">
                     <Link to="chat">Chat</Link>
                   </Disclosure.Button>
                 </div>
-                <div className="pt-4 pb-3 border-t border-gray-700">
+                <div className="pt-4 pb-3 border-t border-red-200">
                   <div className="flex items-center px-5">
                     <div className="flex-shrink-0">
                       <img
@@ -199,13 +203,13 @@ export default function Layout(props) {
                       <div className="text-base font-medium leading-none text-white">
                         {user.name}
                       </div>
-                      <div className="text-sm font-medium leading-none text-gray-400">
+                      <div className="text-sm font-medium leading-none text-gray-200">
                         {user.email}
                       </div>
                     </div>
                     <button
                       type="button"
-                      className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                      className="ml-auto bg-red-300 flex-shrink-0 p-1 rounded-full text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-300 focus:ring-white"
                     >
                       <span className="sr-only">View notifications</span>
                       <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -222,11 +226,11 @@ export default function Layout(props) {
                         {item.name}
                       </Disclosure.Button>
                     ))} */}
-                    <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                    <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-white hover:bg-red-300">
                       <Link to="profile">Your Profile</Link>
                     </Disclosure.Button>
-                    <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                      Sign Out
+                    <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-white hover:bg-red-300">
+                      <Link to="/">Sign Out</Link>
                     </Disclosure.Button>
                   </div>
                 </div>
@@ -245,7 +249,7 @@ export default function Layout(props) {
             {/* Replace with your content */}
 
             <div className="px-4 py-6 sm:px-0">
-              <div className="border-4 border-gray-200 rounded-lg h-[700px]">
+              <div className="rounded-lg">
                 {/* Router Page and */}
                 {/* <div className="bg-red-200 rounded mx-auto p-4 h-full">
                   <p className="text-black">Hello</p>
