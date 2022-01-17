@@ -5,10 +5,11 @@ import Mainpost from "./Components/Post/Mainpost";
 import Layout from "./Components/Layout/Layout";
 import NotFound from "./Components/Layout/NotFound";
 import Review from "./Components/Review/Review";
+import Addpost from "./Components/Post/Addpost";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-slate-200    h-full-screen">
       <Routes>
         {/* Initial Page*/}
         <Route index path="/" element={<Login />} />
@@ -17,6 +18,7 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="reviews" element={<Review />} />
           <Route path="problem" element={<Mainpost />} />
+          <Route path="/post/add" element={<Addpost />} />
           {/* ยังไม่ต้องแอด Chat Page */}
         </Route>
         {/* Not Found Page */}
