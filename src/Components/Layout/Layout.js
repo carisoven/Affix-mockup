@@ -1,7 +1,10 @@
 /* eslint-disable no-undef */
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { 
+  // BellIcon, 
+  MenuIcon, 
+  XIcon } from "@heroicons/react/outline";
 import { Link, Outlet } from "react-router-dom";
 
 //user data import

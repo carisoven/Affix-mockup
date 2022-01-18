@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
-const Login = () => {
+const Signup = () => {
     return (
-      <div className="flex overflow-auto min-h-screen p-4 bg-gray-100  md:items-center lg:justify-center">
+      <div className="flex overflow-auto h-screen p-4 bg-gray-100  md:items-center lg:justify-center">
         <div className="flex flex-col w-full lg:overflow-hidden overflow-auto bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-xl">
           <div className="lg:flex lg:flex-1 lg:max-w-screen-xl p-4 py-6 text-white bg-red-400 md:w-80 md:flex-1 md:flex-shrink-0 md:flex md:flex-col md:items-center ">
             <div className="my-3 text-4xl font-bold tracking-wider text-center">
@@ -64,9 +64,27 @@ const Login = () => {
           </div>
           <div className="items-center p-5 bg-white md:flex-1">
             <h3 className="my-4 text-2xl font-semibold text-gray-700">
-              Account Login
+              Register
             </h3>
             <form action="#" className="flex flex-col space-y-5">
+              <div className="flex flex-col space-y-1">
+                <label
+                  htmlFor="text"
+                  className="text-sm font-semibold text-gray-500"
+                >
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="text"
+                  name="fullname"
+                  //   value={username}
+                  //   onChange={(e) => onChange(e)}
+                  required
+                  autoFocus
+                  className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-red-200"
+                />
+              </div>
               <div className="flex flex-col space-y-1">
                 <label
                   htmlFor="text"
@@ -81,7 +99,23 @@ const Login = () => {
                   //   value={username}
                   //   onChange={(e) => onChange(e)}
                   required
-                  autoFocus
+                  className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-red-200"
+                />
+              </div>
+              <div className="flex flex-col space-y-1">
+                <label
+                  htmlFor="text"
+                  className="text-sm font-semibold text-gray-500"
+                >
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  //   value={username}
+                  //   onChange={(e) => onChange(e)}
+                  required
                   className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-red-200"
                 />
               </div>
@@ -91,7 +125,7 @@ const Login = () => {
                     htmlFor="password"
                     className="text-sm font-semibold text-gray-500"
                   >
-                    Password
+                    Password Check
                   </label>
                 </div>
                 <input
@@ -103,12 +137,12 @@ const Login = () => {
                   required
                   className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-red-200"
                 />
-                <a
+                {/* <a
                   href="#"
                   className="text-sm text-red-400 hover:underline focus:text-blue-800"
                 >
                   Forgot Password?
-                </a>
+                </a> */}
               </div>
               {/*  Check Box Remember
               <div className="flex items-center space-x-2">
@@ -126,13 +160,13 @@ const Login = () => {
                     //   onClick={(e) => onSubmit(e)}
                     className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-red-400 rounded-md shadow hover:bg-red-400 focus:outline-none focus:ring-red-200 focus:ring-4"
                   >
-                    Log in
+                    Sign Up
                   </button>
                 </Link>
               </div>
               <div>
                 <button className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-red-400 rounded-md shadow hover:bg-red-400 focus:outline-none focus:ring-red-200 focus:ring-4">
-                  Sign Up
+                  Log in
                 </button>
               </div>
               {/* <div className="flex flex-col space-y-5">
@@ -166,4 +200,4 @@ const Login = () => {
     );
 }
 
-export default Login
+export default Signup

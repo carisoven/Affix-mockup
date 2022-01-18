@@ -6,10 +6,11 @@ import Layout from "./Components/Layout/Layout";
 import NotFound from "./Components/Layout/NotFound";
 import Review from "./Components/Review/Review";
 import Addpost from "./Components/Post/Addpost";
+// import Signup from "./Components/Auth/Signup";
 
 function App() {
   return (
-    <div className="App bg-slate-200    h-full-screen">
+    <div className="App bg-slate-100   min-h-screen">
       <Routes>
         {/* Initial Page*/}
         <Route index path="/" element={<Login />} />
