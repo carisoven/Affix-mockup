@@ -10,7 +10,7 @@ import Addpost from "./Components/Post/Addpost";
 
 function App() {
   return (
-    <div className="App bg-slate-100   min-h-screen">
+    <div className="bg-slate-100   min-h-screen">
       <Routes>
         {/* Initial Page*/}
         <Route index path="/" element={<Login />} />
