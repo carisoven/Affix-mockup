@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
- import { Editor } from '@tinymce/tinymce-react';
+import { Editor } from '@tinymce/tinymce-react';
+
 
 const Addpost = () => {
        const editorRef = useRef(null);
@@ -15,12 +16,18 @@ const Addpost = () => {
             <div className="shadow overflow-hidden sm:rounded-md">
               <div className="px-4 py-5 bg-white sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
-                  <div className="col-span-6 sm:col-span-3">
+                  <label
+                    htmlFor="first-name"
+                    className="block text-xl font-medium text-gray-700"
+                  >
+                    เพิ่มเนื้อหา
+                  </label>
+                  <div className="col-span-6">
                     <label
                       htmlFor="first-name"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-md font-medium text-gray-700"
                     >
-                      First name
+                      Title
                     </label>
                     <input
                       type="text"
@@ -30,11 +37,11 @@ const Addpost = () => {
                       className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                     />
                   </div>
-
-                  <div className="col-span-6 sm:col-span-3">
+                    
+                  {/* <div className="col-span-6">
                     <label
                       htmlFor="last-name"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-md font-medium text-gray-700"
                     >
                       Last name
                     </label>
@@ -50,7 +57,7 @@ const Addpost = () => {
                   <div className="col-span-6 sm:col-span-4">
                     <label
                       htmlFor="email-address"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-md font-medium text-gray-700"
                     >
                       Email address
                     </label>
@@ -66,7 +73,7 @@ const Addpost = () => {
                   <div className="col-span-6 sm:col-span-3">
                     <label
                       htmlFor="country"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-md font-medium text-gray-700"
                     >
                       Country
                     </label>
@@ -80,28 +87,50 @@ const Addpost = () => {
                       <option>Canada</option>
                       <option>Mexico</option>
                     </select>
-                  </div>
+                  </div> */}
 
                   <div className="col-span-6">
                     <label
                       htmlFor="street-address"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-md font-medium text-gray-700"
                     >
-                      Street address
+                      Discription
                     </label>
-                    <input
+                    {/* <input
                       type="text"
                       name="street-address"
                       id="street-address"
                       autoComplete="street-address"
                       className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    /> */}
+
+                    <Editor
+                      apiKey="u9xnjd1zxyorl0cxv29cpdlfgxgr67ypm5gl6t0hw24tq7qs"
+                      onInit={(evt, editor) => (editorRef.current = editor)}
+                      initialValue="<p>Place This Your Content.</p>"
+                      init={{
+                        height: 500,
+                        menubar: false,
+                        plugins: [
+                          "advlist autolink lists link image charmap print preview anchor",
+                          "searchreplace visualblocks code fullscreen",
+                          "insertdatetime media table paste code help wordcount",
+                        ],
+                        toolbar:
+                          "undo redo | formatselect | " +
+                          "bold italic backcolor | alignleft aligncenter " +
+                          "alignright alignjustify | bullist numlist outdent indent | " +
+                          "removeformat | code | help",
+                        content_style:
+                          "body { font-family:Helvetica,Arial,sans-serif; font-size:15px }",
+                      }}
                     />
                   </div>
 
                   <div className="col-span-6 sm:col-span-6 lg:col-span-2">
                     <label
                       htmlFor="city"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-md font-medium text-gray-700"
                     >
                       City
                     </label>
@@ -117,7 +146,7 @@ const Addpost = () => {
                   <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                     <label
                       htmlFor="region"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-md font-medium text-gray-700"
                     >
                       State / Province
                     </label>
@@ -133,7 +162,7 @@ const Addpost = () => {
                   <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                     <label
                       htmlFor="postal-code"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-md font-medium text-gray-700"
                     >
                       ZIP / Postal code
                     </label>
@@ -159,27 +188,6 @@ const Addpost = () => {
           </form>
         </div>
 
-        <Editor
-          apiKey="u9xnjd1zxyorl0cxv29cpdlfgxgr67ypm5gl6t0hw24tq7qs"
-          onInit={(evt, editor) => (editorRef.current = editor)}
-          initialValue="<p>Place This Your Content.</p>"
-          init={{
-            height: 500,
-            menubar: false,
-            plugins: [
-              "advlist autolink lists link image charmap print preview anchor",
-              "searchreplace visualblocks code fullscreen",
-              "insertdatetime media table paste code help wordcount",
-            ],
-            toolbar:
-              "undo redo | formatselect | " +
-              "bold italic backcolor | alignleft aligncenter " +
-              "alignright alignjustify | bullist numlist outdent indent | " +
-              "removeformat | code | help",
-            content_style:
-              "body { font-family:Helvetica,Arial,sans-serif; font-size:15px }",
-          }}
-        />
         <button onClick={log}>Log editor content</button>
       </div>
     );
