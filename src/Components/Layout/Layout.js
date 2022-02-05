@@ -65,7 +65,7 @@ export default function Layout(props) {
                               item.current
                                 ? "bg-gray-900 text-white"
                                 : "text-white hover:bg-red-300 hover:text-white",
-                              "px-3 py-2 rounded-md text-sm font-medium"
+                              "px-3 py-2 rounded-md text-md font-medium"
                             )}
                             aria-current={item.current ? "page" : undefined}
                           >
@@ -89,7 +89,7 @@ export default function Layout(props) {
                       {/* Profile dropdown */}
                       <Menu as="div" className="ml-3 relative">
                         <div>
-                          <Menu.Button className="max-w-xs bg-red-400 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-300 focus:ring-white">
+                          <Menu.Button className="max-w-xs bg-red-400 rounded-full flex items-center text-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-300 focus:ring-white">
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
@@ -128,14 +128,14 @@ export default function Layout(props) {
                             <Menu.Item>
                               <Link
                                 to="profile"
-                                className="block px-4 py-2 text-sm text-gray-700"
+                                className="block px-4 py-2 text-md text-gray-700"
                               >
                                 Your Profile
                               </Link>
                             </Menu.Item>
                             <Menu.Item>
                               <Link to="/">
-                                <button className="block px-4 py-2 text-sm text-gray-700">
+                                <button className="block px-4 py-2 text-md text-gray-700">
                                   Sign Out
                                 </button>
                               </Link>
@@ -181,16 +181,16 @@ export default function Layout(props) {
                       {item.name}
                     </Disclosure.Button>
                   ))} */}
-                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-red-300 hover:text-white">
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-md font-medium text-white hover:bg-red-300 hover:text-white">
                     <Link to="home">Home</Link>
                   </Disclosure.Button>
-                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-red-300 hover:text-white">
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-md font-medium text-white hover:bg-red-300 hover:text-white">
                     <Link to="problem">Problem</Link>
                   </Disclosure.Button>
-                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-red-300 hover:text-white">
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-md font-medium text-white hover:bg-red-300 hover:text-white">
                     <Link to="review">Review</Link>
                   </Disclosure.Button>
-                  <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-red-300 hover:text-white">
+                  <Disclosure.Button className="block px-3 py-2 rounded-md text-md font-medium text-white hover:bg-red-300 hover:text-white">
                     <Link to="chat">Chat</Link>
                   </Disclosure.Button>
                 </div>
@@ -204,10 +204,10 @@ export default function Layout(props) {
                       />
                     </div>
                     <div className="ml-3">
-                      <div className="text-base font-medium leading-none text-white">
+                      <div className="text-md font-medium leading-none text-white">
                         {user.name}
                       </div>
-                      <div className="text-sm font-medium leading-none text-gray-200">
+                      <div className="text-md font-medium leading-none text-gray-200">
                         {user.email}
                       </div>
                     </div>
@@ -231,10 +231,10 @@ export default function Layout(props) {
                         {item.name}
                       </Disclosure.Button>
                     ))} */}
-                    <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-white hover:bg-red-300">
+                    <Disclosure.Button className="block px-3 py-2 rounded-md text-md font-medium text-white hover:text-white hover:bg-red-300">
                       <Link to="profile">Your Profile</Link>
                     </Disclosure.Button>
-                    <Disclosure.Button className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-white hover:bg-red-300">
+                    <Disclosure.Button className="block px-3 py-2 rounded-md text-md font-medium text-white hover:text-white hover:bg-red-300">
                       <Link to="/">Sign Out</Link>
                     </Disclosure.Button>
                   </div>
