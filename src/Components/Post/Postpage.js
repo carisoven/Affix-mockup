@@ -27,13 +27,38 @@ const Postpage = () => {
               placeholder="Your message">
                     At w3schools.com you will learn how to make a website. They offer
                     free tutorials in all web development technologies.</textarea>
-            <div className="grid justify-items-end">
-            <button className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <div className="grid md:justify-items-end">
+            <button className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               Comment
             </button>
             </div>
 
           </div>
+        </div>
+      </div>
+      <div>
+        <div className=" bg-white h-96 rounded-xl space-y-4">
+          <div className="mx-auto h-30 bg-red-400 p-4 text-lg">
+            <p>Comment</p>
+          </div>
+          <div className="mx-4  ">
+            <div className=" bg-red-200  p-4  ">
+                    Name
+            </div>
+            <div className=" bg-blue-200  p-4  ">
+                    Comment Contents
+            </div>
+          </div>
+
+          <div className="mx-4  ">
+            <div className=" bg-red-200  p-4  ">
+                    Name
+            </div>
+            <div className=" bg-blue-200  p-4  ">
+                    Comment Contents
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
