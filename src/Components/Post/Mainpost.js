@@ -10,6 +10,9 @@ const Mainpost = () => {
             <div className='p-4'>
             <Link to="/post/singlepost/:id" className=" p-3 bg-slate-800 text-white rounded-lg">Post Page</Link><br/>
             </div>
+            <div className="bg-red-200 rounded mx-auto p-4 h-full">
+                  <p className="text-black">Hello</p>
+                </div>
             <h1>Post Problem Page</h1>
         </div>
     )
