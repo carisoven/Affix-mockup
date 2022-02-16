@@ -7,6 +7,7 @@ import NotFound from "./Components/Layout/NotFound";
 import Review from "./Components/Review/Review";
 import Addpost from "./Components/Post/Addpost";
 import Postpage from "./Components/Post/Postpage";
+import Profile from "./Components/Profile/Profile";
 // import Signup from "./Components/Auth/Signup";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="problem" element={<Mainpost />} />
           <Route path="/post/add" element={<Addpost />} />
           <Route path="/post/singlepost/:id" element={<Postpage />} />
+          <Route path="/profile" element={<Profile/>}/>
           {/* ยังไม่ต้องแอด Chat Page */}
         </Route>
         {/* Not Found Page */}
