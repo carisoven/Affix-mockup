@@ -39,7 +39,7 @@ export default function Layout(props) {
         <body class="h-full">
         ```
       */}
-      <div className="min-h-full">
+      <div className="min-h-screen">
         {/* bg-gray-900 */}
         <Disclosure as="nav" className="bg-red-400">
           {({ open }) => (
